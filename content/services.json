@@ -1,0 +1,57 @@
+{
+  "price_note": "Prices are a starting point. Your final price depends on your design, whether your colour is in stock, and how far I travel — I'll always confirm it on WhatsApp before your appointment.",
+  "price_factors": [
+    { "title": "Your design", "body": "A single colour is quickest. French tips, chrome, 3D art and hand-painted detail take more time and product, so they cost a bit more." },
+    { "title": "Your colour", "body": "If I have your colour in my kit, great. If I need to buy a specific shade just for your set, I may add the cost of it." },
+    { "title": "Travel distance", "body": "I come to you. Areas close to me have no or a small travel fee; further areas cost a little more. See the travel table below." }
+  ],
+  "categories": [
+    {
+      "name": "Gel polish & overlay",
+      "intro": "Glossy, chip-resistant colour on your natural nails.",
+      "services": [
+        { "name": "Gel polish — hands", "description": "Cuticle care, shaping and gel colour of your choice.", "price_from": 200, "price_to": 250, "duration_minutes": 60, "deposit": "", "featured": true, "addon": false, "active": true },
+        { "name": "Gel overlay — hands", "description": "A strengthening gel layer over your natural nails, then colour.", "price_from": 250, "price_to": 300, "duration_minutes": 75, "deposit": "", "featured": true, "addon": false, "active": true }
+      ]
+    },
+    {
+      "name": "Acrylic & builder gel",
+      "intro": "Extra length and strength, shaped exactly how you like.",
+      "services": [
+        { "name": "Builder gel (BIAB)", "description": "Strengthens and adds a little length while your natural nails grow.", "price_from": 280, "price_to": 350, "duration_minutes": 90, "deposit": "", "featured": false, "addon": false, "active": true },
+        { "name": "Acrylic full set", "description": "Tips or sculpted extensions with acrylic, in your shape and length.", "price_from": 320, "price_to": 400, "duration_minutes": 120, "deposit": "", "featured": true, "addon": false, "active": true },
+        { "name": "Acrylic refill / fill", "description": "Fill in the regrowth on an existing set (2–3 weeks old).", "price_from": 250, "price_to": 300, "duration_minutes": 90, "deposit": "", "featured": false, "addon": false, "active": true }
+      ]
+    },
+    {
+      "name": "Pedicures & press-ons",
+      "intro": "Pretty toes and easy at-home options.",
+      "services": [
+        { "name": "Gel toes", "description": "Shaping, cuticle care and gel colour on your toes.", "price_from": 200, "price_to": 250, "duration_minutes": 60, "deposit": "", "featured": true, "addon": false, "active": true },
+        { "name": "Custom press-on set", "description": "A reusable set made to your sizes and design. Collection or delivery arranged on WhatsApp.", "price_from": 250, "price_to": 400, "duration_minutes": 0, "deposit": "", "featured": false, "addon": false, "active": true }
+      ]
+    },
+    {
+      "name": "Nail art & removals",
+      "intro": "Add these to any set.",
+      "services": [
+        { "name": "French tips", "description": "Classic or coloured French.", "price_from": 30, "price_to": 50, "duration_minutes": 15, "deposit": "", "featured": false, "addon": true, "active": true },
+        { "name": "Chrome / cat-eye", "description": "Mirror chrome or magnetic cat-eye finish.", "price_from": 40, "price_to": 60, "duration_minutes": 15, "deposit": "", "featured": false, "addon": true, "active": true },
+        { "name": "Nail art (per nail)", "description": "Hand-painted detail, 3D flowers, gems and more.", "price_from": 10, "price_to": 30, "duration_minutes": 10, "deposit": "", "featured": false, "addon": true, "active": true },
+        { "name": "Soak-off / removal", "description": "Gentle removal of gel or acrylic before your new set (or on its own).", "price_from": 50, "price_to": 100, "duration_minutes": 30, "deposit": "", "featured": false, "addon": true, "active": true },
+        { "name": "Repair (per nail)", "description": "Fix a broken or lifted nail.", "price_from": 20, "price_to": 0, "duration_minutes": 10, "deposit": "", "featured": false, "addon": true, "active": true }
+      ]
+    }
+  ],
+  "travel_mode": "tiers",
+  "travel_note": "Not sure if I travel to you? Send me a WhatsApp and ask.",
+  "areas": [
+    { "name": "Roodepoort", "fee": 0, "notes": "", "active": true },
+    { "name": "Florida", "fee": 0, "notes": "", "active": true },
+    { "name": "Weltevreden Park", "fee": 30, "notes": "", "active": true },
+    { "name": "Honeydew", "fee": 30, "notes": "", "active": true },
+    { "name": "Northcliff", "fee": 50, "notes": "", "active": true },
+    { "name": "Krugersdorp", "fee": 60, "notes": "", "active": true },
+    { "name": "Randburg", "fee": 60, "notes": "", "active": true }
+  ]
+}

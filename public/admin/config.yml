@@ -1,0 +1,258 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms@0.251.0/schema/sveltia-cms.json
+# Content editor for Chloe. Every "Save" commits to GitHub, which rebuilds the
+# site automatically (about 2 minutes). Sign in with "Sign In with Token" using a
+# GitHub fine-grained token (Contents: Read and write on this repo only).
+
+backend:
+  name: github
+  repo: JancoCalitz/Nails-by-Chloe
+  branch: main
+  commit_messages:
+    create: "Content: create {{collection}} “{{slug}}”"
+    update: "Content: update {{collection}} “{{slug}}”"
+    delete: "Content: delete {{collection}} “{{slug}}”"
+    uploadMedia: "Content: upload “{{path}}”"
+    deleteMedia: "Content: delete “{{path}}”"
+
+site_url: https://jancocalitz.github.io/Nails-by-Chloe/
+display_url: https://jancocalitz.github.io/Nails-by-Chloe/
+logo_url: https://jancocalitz.github.io/Nails-by-Chloe/icon-192.png
+
+media_folder: public/uploads
+public_folder: /uploads
+
+# Photos are shrunk and converted to WebP on the phone BEFORE uploading.
+# This saves mobile data and strips location (GPS) data from the photo.
+media_libraries:
+  all:
+    max_file_size: 25000000
+    slugify_filename: true
+    transformations:
+      raster_image:
+        format: webp
+        quality: 80
+        width: 2000
+        height: 2000
+
+editor:
+  preview: false
+
+collections:
+  # ---------------------------------------------------------------- Gallery
+  - name: gallery
+    label: "📸 Gallery photos"
+    description: "Add new sets here. Drag to reorder — the top ones show first. Turn on “Show on homepage” for your best work."
+    files:
+      - name: gallery
+        label: "Gallery"
+        file: content/gallery.json
+        format: json
+        fields:
+          - name: items
+            label: "Photos"
+            label_singular: "photo"
+            widget: list
+            add_to_top: true
+            summary: "{{fields.caption}}"
+            fields:
+              - { name: image, label: "Photo", widget: image, hint: "Portrait (upright) photos look best." }
+              - { name: caption, label: "Caption", widget: string, hint: "e.g. “Milky white almond with gold flakes”" }
+              - name: styles
+                label: "Styles"
+                widget: relation
+                collection: settings
+                file: styles
+                value_field: "{{styles.*.slug}}"
+                search_fields: ["{{styles.*.name}}"]
+                display_fields: ["{{styles.*.name}}"]
+                multiple: true
+                required: false
+              - { name: featured, label: "Show on homepage", widget: boolean, default: false }
+              - { name: published, label: "Visible on site", widget: boolean, default: true }
+              - { name: alt, label: "Photo description (for blind visitors & Google)", widget: string, required: false, hint: "Optional. If empty, the caption is used." }
+              - { name: slug, label: "Web address name (advanced)", widget: string, required: false, hint: "Leave empty — it’s made from the caption." }
+
+  # ---------------------------------------------------------------- Prices
+  - name: services
+    label: "💅 Services & prices"
+    files:
+      - name: services
+        label: "Services, prices & travel"
+        file: content/services.json
+        format: json
+        fields:
+          - { name: price_note, label: "Note at the top of the price page", widget: text }
+          - name: categories
+            label: "Service groups"
+            label_singular: "group"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Group name", widget: string }
+              - { name: intro, label: "Short intro", widget: string, required: false }
+              - name: services
+                label: "Services"
+                label_singular: "service"
+                widget: list
+                summary: "{{fields.name}} — R{{fields.price_from}}"
+                fields:
+                  - { name: name, label: "Name", widget: string }
+                  - { name: description, label: "Description", widget: string, required: false }
+                  - { name: price_from, label: "Price from (R)", widget: number, value_type: int, min: 0 }
+                  - { name: price_to, label: "Price up to (R)", widget: number, value_type: int, min: 0, default: 0, hint: "Put 0 to show “from R…” only." }
+                  - { name: duration_minutes, label: "Roughly how long (minutes)", widget: number, value_type: int, min: 0, default: 60, hint: "0 hides it." }
+                  - { name: deposit, label: "Deposit (optional)", widget: string, required: false, hint: "e.g. “R100”. Leave empty for none." }
+                  - { name: addon, label: "This is an extra / add-on", widget: boolean, default: false }
+                  - { name: featured, label: "Show on homepage", widget: boolean, default: false }
+                  - { name: active, label: "Offering this now", widget: boolean, default: true }
+          - name: price_factors
+            label: "What affects your price"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Title", widget: string }
+              - { name: body, label: "Explanation", widget: text }
+          - name: travel_mode
+            label: "How to show travel fees"
+            widget: select
+            options:
+              - { label: "Show a fee per area", value: tiers }
+              - { label: "Say “quoted by distance”", value: quote }
+          - { name: travel_note, label: "Travel note", widget: string, required: false }
+          - name: areas
+            label: "Areas I travel to"
+            label_singular: "area"
+            widget: list
+            summary: "{{fields.name}} — R{{fields.fee}}"
+            fields:
+              - { name: name, label: "Area", widget: string }
+              - { name: fee, label: "Travel fee (R)", widget: number, value_type: int, min: 0, default: 0 }
+              - { name: notes, label: "Note", widget: string, required: false }
+              - { name: active, label: "Show this area", widget: boolean, default: true }
+
+  # ---------------------------------------------------------------- Pages
+  - name: pages
+    label: "📝 Pages & text"
+    files:
+      - name: about
+        label: "About me"
+        file: content/about.json
+        format: json
+        fields:
+          - { name: heading, label: "Heading", widget: string }
+          - { name: teaser, label: "Short intro (also on homepage)", widget: text }
+          - { name: photo, label: "Photo of you", widget: image, required: false }
+          - { name: story, label: "Your story", widget: text, hint: "Leave an empty line between paragraphs." }
+          - { name: products, label: "Products I use", widget: text, required: false }
+          - { name: hygiene, label: "Hygiene / clean & safe", widget: text, required: false }
+          - { name: setup, label: "My mobile setup", widget: text, required: false }
+      - name: policies
+        label: "Policies (deposit, cancellation…)"
+        file: content/policies.json
+        format: json
+        fields:
+          - name: policies
+            label: "Policies"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: key, label: "Short code (advanced)", widget: string }
+              - { name: title, label: "Title", widget: string }
+              - { name: body, label: "Text", widget: text, hint: "Put **two stars** around words to make them bold." }
+      - name: faq
+        label: "FAQ"
+        file: content/faq.json
+        format: json
+        fields:
+          - name: faqs
+            label: "Questions"
+            label_singular: "question"
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { name: question, label: "Question", widget: string }
+              - { name: answer, label: "Answer", widget: text, hint: "Start lines with “- ” for a bullet list." }
+      - name: reviews
+        label: "Client reviews"
+        file: content/reviews.json
+        format: json
+        fields:
+          - name: reviews
+            label: "Reviews"
+            label_singular: "review"
+            widget: list
+            add_to_top: true
+            hint: "Only add real reviews from real clients (ask them first). The reviews section stays hidden until you add one."
+            summary: "{{fields.client_name}}"
+            fields:
+              - { name: client_name, label: "Client name or initials", widget: string }
+              - { name: body, label: "What they said", widget: text }
+              - { name: date, label: "Date", widget: datetime, time_format: false, date_format: "YYYY-MM-DD", format: "YYYY-MM-DD", required: false }
+              - { name: image, label: "Photo of their set (optional)", widget: image, required: false }
+              - { name: published, label: "Show on site", widget: boolean, default: true }
+      - name: legal
+        label: "Privacy & booking terms"
+        file: content/legal.json
+        format: json
+        fields:
+          - { name: privacy, label: "Privacy notice", widget: text }
+          - { name: terms, label: "Booking terms", widget: text }
+
+  # ---------------------------------------------------------------- Settings
+  - name: settings
+    label: "⚙️ Settings"
+    files:
+      - name: site
+        label: "Availability, contact & homepage"
+        file: content/settings.json
+        format: json
+        fields:
+          - name: availability_status
+            label: "Availability"
+            widget: select
+            options:
+              - { label: "🟢 Taking bookings", value: open }
+              - { label: "🟡 Limited spots", value: limited }
+              - { label: "🔴 Fully booked", value: full }
+          - { name: full_until_date, label: "Fully booked until (date)", widget: datetime, time_format: false, date_format: "YYYY-MM-DD", format: "YYYY-MM-DD", required: false }
+          - { name: availability_message, label: "Custom availability message (optional)", widget: string, required: false, hint: "Overrides the automatic text, e.g. “Booking for December now!”" }
+          - { name: draft_notice, label: "Show “Preview site” banner", widget: boolean, hint: "Switch OFF when you’re ready to launch." }
+          - { name: whatsapp_number, label: "WhatsApp number", widget: string, required: false, hint: "e.g. 082 123 4567" }
+          - { name: response_time, label: "I usually reply within…", widget: string, hint: "e.g. “a few hours”" }
+          - { name: email, label: "Email", widget: string, required: false }
+          - { name: instagram_handle, label: "Instagram username", widget: string, required: false }
+          - { name: tiktok_handle, label: "TikTok username", widget: string, required: false }
+          - { name: facebook_url, label: "Facebook page link", widget: string, required: false }
+          - { name: google_review_url, label: "Google review link", widget: string, required: false }
+          - name: hours
+            label: "When I work"
+            widget: list
+            summary: "{{fields.days}}: {{fields.times}}"
+            fields:
+              - { name: days, label: "Days", widget: string }
+              - { name: times, label: "Times", widget: string }
+          - { name: business_name, label: "Business name", widget: string }
+          - { name: tagline, label: "Tagline", widget: string }
+          - { name: hero_headline, label: "Homepage headline", widget: string }
+          - { name: hero_subline, label: "Homepage intro", widget: text }
+          - { name: hero_image, label: "Homepage main photo", widget: image, required: false }
+          - { name: accent_color, label: "Accent colour", widget: color, hint: "Buttons are darkened automatically if needed so text stays readable." }
+          - { name: bg_color, label: "Background colour", widget: color, hint: "Keep it light." }
+          - { name: price_range, label: "Price range (for Google)", widget: string }
+          - { name: seo_title, label: "Google title", widget: string }
+          - { name: seo_description, label: "Google description", widget: text }
+          - { name: booking_email_key, label: "Web3Forms key (Janco)", widget: string, required: false, hint: "Optional: emails a copy of each booking request." }
+          - { name: goatcounter_code, label: "GoatCounter code (Janco)", widget: string, required: false, hint: "Optional: cookie-free visitor stats." }
+      - name: styles
+        label: "Gallery styles (filters)"
+        file: content/styles.json
+        format: json
+        fields:
+          - name: styles
+            label: "Styles"
+            label_singular: "style"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: "Name", widget: string }
+              - { name: slug, label: "Short code", widget: string, hint: "lowercase, no spaces, e.g. “3d-art”. Don’t change once photos use it." }

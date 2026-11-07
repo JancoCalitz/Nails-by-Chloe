@@ -1,0 +1,146 @@
+{
+  "items": [
+    {
+      "image": "/samples/sample-01.svg",
+      "caption": "SAMPLE — Soft pink French",
+      "alt": "Placeholder image standing in for a soft pink french nail set",
+      "styles": [
+        "french",
+        "gel"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-02.svg",
+      "caption": "SAMPLE — Mauve chrome",
+      "alt": "Placeholder image standing in for a mauve chrome nail set",
+      "styles": [
+        "chrome",
+        "gel"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-03.svg",
+      "caption": "SAMPLE — Milky white almond",
+      "alt": "Placeholder image standing in for a milky white almond nail set",
+      "styles": [
+        "minimal",
+        "acrylic"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-04.svg",
+      "caption": "SAMPLE — Nude with gold flecks",
+      "alt": "Placeholder image standing in for a nude with gold flecks nail set",
+      "styles": [
+        "minimal",
+        "gel"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-05.svg",
+      "caption": "SAMPLE — Cherry red coffin",
+      "alt": "Placeholder image standing in for a cherry red coffin nail set",
+      "styles": [
+        "acrylic"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-06.svg",
+      "caption": "SAMPLE — Pastel 3D flowers",
+      "alt": "Placeholder image standing in for a pastel 3d flowers nail set",
+      "styles": [
+        "3d-art",
+        "acrylic"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-07.svg",
+      "caption": "SAMPLE — Glazed donut",
+      "alt": "Placeholder image standing in for a glazed donut nail set",
+      "styles": [
+        "chrome",
+        "gel"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-08.svg",
+      "caption": "SAMPLE — Summer citrus toes",
+      "alt": "Placeholder image standing in for a summer citrus toes nail set",
+      "styles": [
+        "toes",
+        "seasonal"
+      ],
+      "featured": true,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-09.svg",
+      "caption": "SAMPLE — Deep plum ombré",
+      "alt": "Placeholder image standing in for a deep plum ombré nail set",
+      "styles": [
+        "gel"
+      ],
+      "featured": false,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-10.svg",
+      "caption": "SAMPLE — Baby blue French",
+      "alt": "Placeholder image standing in for a baby blue french nail set",
+      "styles": [
+        "french",
+        "acrylic"
+      ],
+      "featured": false,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-11.svg",
+      "caption": "SAMPLE — Festive sparkle",
+      "alt": "Placeholder image standing in for a festive sparkle nail set",
+      "styles": [
+        "seasonal",
+        "gel"
+      ],
+      "featured": false,
+      "published": true,
+      "slug": ""
+    },
+    {
+      "image": "/samples/sample-12.svg",
+      "caption": "SAMPLE — Classic nude short",
+      "alt": "Placeholder image standing in for a classic nude short nail set",
+      "styles": [
+        "minimal",
+        "gel"
+      ],
+      "featured": false,
+      "published": true,
+      "slug": ""
+    }
+  ]
+}

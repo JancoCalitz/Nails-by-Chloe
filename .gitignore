@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.env*
+!.env.example
+src/generated/
+public/_generated/
+.DS_Store
+Thumbs.db

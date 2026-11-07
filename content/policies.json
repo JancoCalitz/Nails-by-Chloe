@@ -1,0 +1,24 @@
+{
+  "policies": [
+    {
+      "key": "deposit",
+      "title": "Deposits",
+      "body": "Some bookings need a small deposit to secure your spot. If yours does, I'll send you the details on WhatsApp once I've confirmed your appointment. The deposit comes off your final price."
+    },
+    {
+      "key": "cancellation",
+      "title": "Cancelling or rescheduling",
+      "body": "Life happens — just let me know at least **24 hours** before your appointment and we'll find a new time. Cancellations with less notice, or no-shows, may lose the deposit."
+    },
+    {
+      "key": "late",
+      "title": "Running late",
+      "body": "Please let me know on WhatsApp if you're running late. If I'm more than 15 minutes late, I'll message you too. Very late starts may mean a simpler design so the next client isn't kept waiting."
+    },
+    {
+      "key": "payment",
+      "title": "Payment",
+      "body": "Cash or EFT on the day. For EFT, please show proof of payment before I leave."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "business_name": "Nails by Chloe",
+  "tagline": "Mobile nail tech · Roodepoort & surrounds",
+  "hero_headline": "Nails, done at your door",
+  "hero_subline": "Gel, acrylic and nail art by Chloe — a mobile nail tech in Roodepoort and surrounds. You pick the set, I bring the salon.",
+  "hero_image": "/samples/sample-01.svg",
+  "draft_notice": true,
+  "whatsapp_number": "",
+  "email": "",
+  "instagram_handle": "",
+  "tiktok_handle": "",
+  "facebook_url": "",
+  "google_review_url": "",
+  "availability_status": "open",
+  "availability_message": "",
+  "full_until_date": "",
+  "response_time": "a few hours",
+  "hours": [
+    { "days": "Monday – Friday", "times": "Evenings, 17:30 – 20:00" },
+    { "days": "Saturday", "times": "08:00 – 17:00" },
+    { "days": "Sunday", "times": "By request" }
+  ],
+  "accent_color": "#B76E79",
+  "bg_color": "#FBF7F4",
+  "seo_title": "Mobile nail tech in Roodepoort | Gel & acrylic nails at your door",
+  "seo_description": "Nails by Chloe is a mobile nail technician in Roodepoort and the West Rand. Gel, acrylic, builder gel, nail art and pedicures at your home. From R200.",
+  "price_range": "R200–R400",
+  "booking_email_key": "",
+  "goatcounter_code": ""
+}

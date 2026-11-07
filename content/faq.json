@@ -1,0 +1,14 @@
+{
+  "faqs": [
+    { "question": "How does booking work?", "answer": "Pick a set you like (or bring your own inspo), send me a booking request, and I'll confirm the date, time and final price on WhatsApp. Your booking is only confirmed once I've replied." },
+    { "question": "Do I need to pay a deposit?", "answer": "Some bookings need a small deposit. If yours does, I'll send the details on WhatsApp after I confirm. It comes off your final price." },
+    { "question": "What if I need to cancel or reschedule?", "answer": "Please give me at least 24 hours' notice on WhatsApp and we'll move your booking. Late cancellations or no-shows may lose the deposit." },
+    { "question": "Where do you travel to?", "answer": "Roodepoort and surrounds on the West Rand. Check the travel table on the Services page — and if your area isn't listed, just ask." },
+    { "question": "What should I have ready at home?", "answer": "A table and two chairs near a plug point, and good light (a window or a bright lamp). That's it — I bring everything else." },
+    { "question": "How should I prep my nails?", "answer": "Come with clean, bare nails if you can. If you have an old gel or acrylic set on, let me know when you book so I can add time for a soak-off." },
+    { "question": "How long will my nails last?", "answer": "Gel polish usually lasts 2–3 weeks. Acrylic and builder gel last 3–4 weeks before a fill. Looking after them (see aftercare) helps a lot." },
+    { "question": "How should I look after my nails?", "answer": "- Wear gloves for dishes and cleaning\n- Use cuticle oil daily\n- Don't use your nails as tools (no opening cans!)\n- Don't pick or peel — book a proper soak-off\n- Message me if a nail lifts or breaks in the first few days" },
+    { "question": "How do I pay?", "answer": "Cash or EFT on the day. For EFT, please show proof of payment before I leave." },
+    { "question": "Can I send you inspiration photos?", "answer": "Yes please! Pick a set from my gallery or attach your own photos in the WhatsApp chat after you send your booking request." }
+  ]
+}
